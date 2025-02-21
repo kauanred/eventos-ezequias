@@ -1,11 +1,15 @@
 package com.eventos.models;
 
+import com.eventos.dtos.UsuarioDTO;
+import com.eventos.repositories.UsuarioRepository;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -43,6 +47,17 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
         this.perfil = perfil;
         this.isVerificado = isVerificado;
+    }
+
+    public Usuario(UsuarioDTO usuarioDTO) {
+        this.id = usuarioDTO.getId();
+        this.nome = usuarioDTO.getNome();
+        this.email = usuarioDTO.getEmail();
+        this.senha = usuarioDTO.getSenha();
+        this.cpf = usuarioDTO.getCpf();
+        this.dataNascimento = usuarioDTO.getDataNascimento();
+        this.perfil = usuarioDTO.getPerfil();
+        this.isVerificado = usuarioDTO.getIsVerificado();
     }
 
     public Long getId() {
@@ -118,6 +133,7 @@ public class Usuario {
 
     @Override
     public int hashCode() {
+
         return Objects.hashCode(id);
     }
 }
