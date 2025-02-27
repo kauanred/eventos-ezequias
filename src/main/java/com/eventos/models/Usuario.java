@@ -57,7 +57,7 @@ public class Usuario {
         this.cpf = usuarioDTO.getCpf();
         this.dataNascimento = usuarioDTO.getDataNascimento();
         this.perfil = usuarioDTO.getPerfil();
-        this.isVerificado = usuarioDTO.getIsVerificado();
+        this.isVerificado = usuarioDTO.getVerificado();
     }
 
     public Long getId() {

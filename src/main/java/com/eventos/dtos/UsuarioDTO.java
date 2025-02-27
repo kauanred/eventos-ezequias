@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import java.util.Date;
 
-@Data
 
 public class UsuarioDTO {
     private Long id;
@@ -17,7 +16,7 @@ public class UsuarioDTO {
     private String cpf;
     private Date dataNascimento;
     private String perfil;
-    private Boolean isVerificado;
+    private Boolean Verificado;
 
     public UsuarioDTO() {}
 
@@ -31,7 +30,71 @@ public class UsuarioDTO {
         this.perfil = usuario.getPerfil();
         this.dataNascimento = usuario.getDataNascimento();
         this.perfil = usuario.getPerfil();
-        this.isVerificado = usuario.getVerificado();
+        this.Verificado = usuario.getVerificado();
+
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
+    public Boolean getVerificado() {
+        return Verificado;
+    }
+
+    public void setVerificado(Boolean verificado) {
+        Verificado = verificado;
+    }
 }
