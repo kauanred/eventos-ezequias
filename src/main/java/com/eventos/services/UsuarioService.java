@@ -61,7 +61,8 @@ public class UsuarioService {
         }
         Usuario usuario = usuarioRepository.findById(usuarioDTO.getId())
                 .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado"));
-        return usuarioDTO;
+
+        return converterUsuarioParaUsuarioDTO(usuario);
     }
     public void deletarUsuario(Long id) {}
 
